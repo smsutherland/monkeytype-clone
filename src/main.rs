@@ -2,6 +2,7 @@ use console::{style, Term};
 use crossterm::{
     cursor::{MoveLeft, MoveToColumn},
     execute,
+    style::Print,
     terminal::{disable_raw_mode, enable_raw_mode},
 };
 use std::io::Write;
@@ -24,9 +25,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 console::Key::Backspace => {
                     let c = chars.prev_cp();
                     if let Some((c, chars_new)) = c {
-                        execute!(term, MoveLeft(1))?;
-                        write!(term, "{}", style(c).color256(59))?;
-                        execute!(term, MoveLeft(1))?;
+                        execute!(term, MoveLeft(1), Print(style(c).color256(59)), MoveLeft(1))?;
                         chars = chars_new;
                         letters.pop();
                     }
