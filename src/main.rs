@@ -47,5 +47,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         }
     }
     disable_raw_mode()?;
+    println!();
     Ok(())
 }
