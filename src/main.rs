@@ -50,7 +50,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                     break;
                 }
                 console::Key::CtrlC => break 'main,
-                other => todo!("{:?}", other),
+                _ => {
+                    // Do nothing for keys we don't recognize yet.
+                }
             }
         }
     }
