@@ -42,9 +42,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                     let (c, chars_new) = chars.next_cp().unwrap();
                     chars = chars_new;
                     if c2 == c {
-                        write!(term, "{}", style(c2).green())?;
+                        write!(term, "{}", style(c).green())?;
                     } else {
-                        write!(term, "{}", style(c2).red())?;
+                        write!(term, "{}", style(c).red())?;
                     }
                     letters.push(c2);
                     break;
