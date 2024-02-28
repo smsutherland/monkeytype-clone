@@ -67,7 +67,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 
 fn create_sentence() -> String {
-    let words = language::ENGLISH_1K.split('\n').collect::<Vec<_>>();
+    let words = language::ENGLISH_1K.lines().collect::<Vec<_>>();
     let count = words.len();
     let mut sentence = String::new();
     for i in 0..10 {
