@@ -11,3 +11,4 @@ crossterm = { version = "0.27.0", default-features = false, features = [
 ] }
 console = "0.15.8"
 strcursor = "0.2.5"
+fastrand = "2.0.1"
